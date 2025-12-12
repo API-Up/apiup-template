@@ -1,0 +1,11 @@
+name: CD Alpha
+
+on:
+  push:
+    branches:
+      - alpha
+
+jobs:
+  call-workflow:
+    uses: api-up/api-actions/.github/workflows/cd_alpha.yaml@main
+    secrets: inherit

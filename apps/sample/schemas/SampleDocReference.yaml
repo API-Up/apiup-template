@@ -1,0 +1,197 @@
+name: SampleDocReference
+acl:
+    create: user
+    read: owner
+    update: owner
+    delete: owner
+fields:
+    # Supported types
+    user_id:
+        # ForeignKey
+        type: string
+        format: id
+        collection: auth_user
+        required: false
+        default: NULL
+        read_only: true
+        index:
+            unique: false
+            sparse: true
+        # load_on_search: always true
+        load_reference_data: [username, email]
+        acl_read: user
+        acl_write: admin
+        description: Foreign Key to the auth_user collection
+        meta:
+    field_bool:
+        type: bool
+        default: NULL
+        index:
+            unique: false
+        # load_on_search: always true
+        acl_read: NULL
+        acl_write: NULL
+        description:
+        meta:
+    field_int:
+        type: int
+        required: false
+        default: 8
+        read_only: false
+        index:
+            unique: false
+        # load_on_search: always true
+        min: 3
+        max: 10
+        choices: [3, 4, 5, 6, 7, 8]
+        forbid: [9, 10]
+        # modifiers: not implemented yet
+        encrypt: false
+        acl_read: NULL
+        acl_write: NULL
+        description:
+        meta:
+
+    field_float:
+        type: float
+        required: false
+        default: 8.2
+        read_only: false
+        index:
+            unique: false
+        # load_on_search: always true
+        min: 4
+        max: 11
+        encrypt: false
+        acl_read: NULL
+        acl_write: NULL
+        description:
+        meta:
+    field_decimal:
+        type: string
+        format: decimal
+        required: false
+        default: "8.2"
+        read_only: false
+        index:
+            unique: false
+        # load_on_search: always true
+        # min: 5
+        # max: 12
+        # modifiers: not implemented yet
+        encrypt: false
+        acl_read: NULL
+        acl_write: NULL
+        description:
+        meta:
+    field_string:
+        type: string
+        required: false
+        default: NULL
+        read_only: false
+        index:
+            sparse: true
+        load_on_search: true
+        # format: ascii
+        # pattern: '\w+'
+        min: 6
+        max: 13
+        choices: [abcdef, defghi, fghijk]
+        forbid: [ijk]
+        # modifiers: [upper, lower, capitalize, title, slugify, slugify_]
+        encrypt: false
+        acl_read: NULL
+        acl_write: NULL
+        description:
+        meta:
+    field_bytes:
+        type: bytes
+        required: false
+        default: NULL
+        read_only: false
+        load_on_search: false
+        min: 7
+        max: 14
+        acl_read: NULL
+        acl_write: NULL
+        description:
+        meta:
+            language: python
+            extension: .py
+    field_datetime:
+        type: string
+        format: datetime
+        required: false
+        default: "2024-12-31T23:59:59+00:00"
+        read_only: false
+        index:
+            unique: false
+        # load_on_search: always true
+        acl_read: NULL
+        acl_write: NULL
+        # modifiers: not implemented yet
+        encrypt: false
+        description: datetime/str. ISO format; YYYY-MM-DDTHH:mm:ss+00:00
+        meta:
+    field_date:
+        type: string
+        format: date
+        required: false
+        default: "2024-12-31"
+        index:
+            unique: false
+        # load_on_search: always true
+        choices: ["2020-01-01", "2020-10-10", "2024-12-31"]
+        forbid: ["2025-10-10"]
+        acl_read: NULL
+        acl_write: NULL
+        # modifiers: not implemented yet
+        encrypt: false
+        description: date/str. YYYY-MM-DD
+        meta:
+    field_time:
+        type: string
+        format: time
+        required: false
+        default: "11:00"
+        index:
+            unique: false
+        # load_on_search: always true
+        choices: ["11:00", "11:15", "12:00", "13:00"]
+        forbid: ["23:00"]
+        acl_read: NULL
+        acl_write: NULL
+        # modifiers: not implemented yet
+        encrypt: false
+        description: time/str. HH:mm
+        meta:
+    field_list:
+        type: list
+        subtype: int
+        schema: NULL
+        collection: NULL
+        required: false
+        default: []
+        index:
+            unique: false
+        load_on_search: false
+        min: 0
+        max: 15
+        modifiers: [sort, remove_duplicates]
+        acl_read: NULL
+        acl_write: NULL
+        description: list/tuple/set
+        meta:
+    field_dict:
+        type: dict
+        required: false
+        default: {}
+        index:
+            unique: false
+        load_on_search: false
+        min: 0
+        max: 16
+        acl_read: NULL
+        acl_write: NULL
+        description: dict
+        meta:

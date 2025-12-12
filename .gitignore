@@ -1,0 +1,43 @@
+# OS
+.DS_Store
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.log
+env/*
+*.egg/*
+build/*
+dist/*
+*.egg
+*egg-info/*
+pyright.json
+.benchmarks
+**/.mypy_cache/
+.pytest_cache
+**/env/*
+.report/
+.report/**
+*.pid
+**/build/**
+**/target/**
+htmlcov
+
+# DB
+.db/*
+
+# K8s
+minikube-linux*
+
+# Binaries
+*.agz
+*.pkg
+*.csvb
+
+# ApiKit
+apiup
+apiup_old
+apiup_new
+apiup.ini
+TODO.md

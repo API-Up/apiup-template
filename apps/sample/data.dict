@@ -1,0 +1,20 @@
+HelloWorldTask
+    __collection: tasks_taskconfig
+    key_params
+        task_path: apps.sample.sample_tasks.HelloWorldTask
+    defaults
+        timeout_secs: 10
+        paused: false
+        max_concurrency: 1
+        lock_name: dev
+
+SleepTask
+    __collection: tasks_taskconfig
+    key_params
+        task_path: apps.sample.sample_tasks.SleepTask
+    defaults
+        timeout_secs: 10
+        paused: false
+        max_in_queue: 10
+        max_concurrency: 1
+        lock_name: dev
