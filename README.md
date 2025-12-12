@@ -49,6 +49,7 @@ Development
 -------------------------------------------------
 
 ```shell
+apiup create_subapp  # To create Sub Apps with a default skeleton and template
 apiup models  # Generate models from YAML schemas
 apiup format  # Format the source code
 apiup lint  # Format and Lint the source code
