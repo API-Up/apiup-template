@@ -1,18 +1,8 @@
-from base_docs import SampleDocReferenceData, TodoListData
+from base_docs import SampleDocReferenceData
 
 # Common utilities:
 # from utils import http, json, secrets, utc, types
 # from utils.log import Log
-
-
-class TodoList(TodoListData):
-    async def add_task(self, description: str, details: str) -> None:
-        self.tasks = self.tasks or {}
-        self.tasks[description] = {
-            'details': details,
-            'completed': False,
-        }
-        await self.save()
 
 
 class SampleDocReference(SampleDocReferenceData):

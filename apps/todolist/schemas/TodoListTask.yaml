@@ -1,0 +1,23 @@
+name: TodoListTask
+acl:
+    create: user
+    read: owner
+    update: owner
+    delete: owner
+fields:
+    todolist_id:
+        type: string
+        format: id
+        collection: todolist_todolist
+    title:
+        type: string
+        required: true
+        min: 3
+        max: 50
+        index:
+            unique: true
+    details:
+        type: string
+    archived:
+        type: bool
+        default: false

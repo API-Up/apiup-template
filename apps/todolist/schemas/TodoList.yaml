@@ -1,0 +1,14 @@
+name: TodoList
+acl:
+    create: user
+    read: owner
+    update: owner
+    delete: owner
+fields:
+    name:
+        type: string
+        required: true
+        min: 3
+        max: 50
+        index:
+            unique: true
